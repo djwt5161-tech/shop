@@ -1,0 +1,1045 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shopify CRO Berater & Shop Effizienz Check | daniel.</title>
+<meta name="description" content="Kostenloser Shopify Shop-Check: Vergleiche deine Conversion Rate, AOV und Add-to-Cart mit Branchen-Benchmarks. 7 Jahre DTC E-Commerce Expertise.">
+<meta property="og:title" content="Shopify Shop Effizienz Check — Wo stehst du wirklich?">
+<meta property="og:description" content="4 KPIs. Branchenvergleich. Ungenutztes Potenzial in €. Kostenlos.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://daniel.de/">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg:#0A0A0C;--bg-raised:#111114;--bg-card:#161619;
+    --text:#E8E6E1;--text-dim:#A0A0A5;--text-muted:#6B6B70;
+    --accent:#C8FF2E;--accent-dim:rgba(200,255,46,0.10);--accent-border:rgba(200,255,46,0.22);
+    --red:#FF4D4D;--red-dim:rgba(255,77,77,0.12);
+    --orange:#FF9F43;--orange-dim:rgba(255,159,67,0.12);
+    --green:#2ECC71;--green-dim:rgba(46,204,113,0.12);
+    --border:rgba(255,255,255,0.06);--radius:14px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased;}
+  a{color:inherit;text-decoration:none;}
+
+  nav{display:flex;justify-content:space-between;align-items:center;padding:20px 48px;border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;background:rgba(10,10,12,0.88);backdrop-filter:blur(20px);}
+  .logo-text{font-family:'Playfair Display',serif;font-size:20px;font-weight:700;letter-spacing:-0.5px;}
+  .logo-text span{color:var(--accent);}
+  .nav-links{display:flex;gap:28px;align-items:center;}
+  .nav-links a{color:var(--text-dim);font-size:14px;font-weight:500;transition:color 0.2s;}
+  .nav-links a:hover{color:var(--text);}
+  .nav-cta{background:var(--accent)!important;color:var(--bg)!important;padding:10px 20px;border-radius:8px;font-weight:700!important;font-size:13px!important;}
+
+  .hero{padding:80px 48px 60px;max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;}
+  .hero-text .eyebrow{font-size:12px;text-transform:uppercase;letter-spacing:2px;color:var(--accent);font-weight:500;margin-bottom:20px;}
+  .hero-text h1{font-family:'Playfair Display',serif;font-size:clamp(32px,4.5vw,56px);font-weight:700;line-height:1.1;letter-spacing:-1.5px;margin-bottom:20px;}
+  .hero-text h1 em{font-style:italic;color:var(--accent);}
+  .hero-text .sub{font-size:17px;color:var(--text-dim);line-height:1.7;margin-bottom:32px;max-width:480px;}
+  .hero-arrow{display:inline-flex;align-items:center;gap:8px;color:var(--accent);font-weight:700;font-size:14px;cursor:pointer;transition:gap 0.2s;}
+  .hero-arrow:hover{gap:14px;}
+
+  .checker{background:var(--bg-raised);border:1px solid var(--border);border-radius:16px;padding:32px;position:relative;overflow:hidden;}
+  .checker::before{content:'';position:absolute;top:-80px;right:-80px;width:200px;height:200px;background:radial-gradient(circle,rgba(200,255,46,0.08),transparent 70%);pointer-events:none;}
+  .checker-title{font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:2px;color:var(--accent);margin-bottom:16px;font-weight:500;}
+  .checker h3{font-size:20px;font-weight:700;margin-bottom:6px;}
+  .checker .checker-sub{font-size:14px;color:var(--text-muted);margin-bottom:20px;}
+  .form-group{margin-bottom:12px;position:relative;}
+  .form-group label{display:flex;align-items:center;gap:6px;font-size:11px;font-weight:500;color:var(--text-dim);margin-bottom:4px;text-transform:uppercase;letter-spacing:0.5px;}
+  .form-group input,.form-group select{width:100%;padding:10px 12px;background:var(--bg);border:1px solid var(--border);border-radius:8px;color:var(--text);font-family:'DM Sans',sans-serif;font-size:14px;outline:none;transition:border-color 0.2s;}
+  .form-group input:focus,.form-group select:focus{border-color:var(--accent-border);}
+  .form-group select option{background:var(--bg-card);}
+  .form-row{display:grid;gap:10px;}
+  .form-row-2{grid-template-columns:1fr 1fr;}
+  .form-row-3{grid-template-columns:1fr 1fr 1fr;}
+  .check-btn{width:100%;padding:13px;background:var(--accent);color:var(--bg);border:none;border-radius:8px;font-family:'DM Sans',sans-serif;font-size:15px;font-weight:700;cursor:pointer;transition:all 0.2s;margin-top:6px;}
+  .check-btn:hover{transform:translateY(-1px);box-shadow:0 6px 24px rgba(200,255,46,0.2);}
+
+  /* Field validation */
+  .form-group input.input-error,.form-group select.input-error{border-color:var(--red)!important;}
+  .form-group input.input-warn,.form-group select.input-warn{border-color:var(--orange)!important;}
+  .field-error{font-size:11px;color:var(--red);margin-top:4px;display:none;}
+  .field-warn{font-size:11px;color:var(--orange);margin-top:4px;display:none;}
+  .field-error.visible,.field-warn.visible{display:block;}
+
+  /* Tooltips */
+  .tooltip-icon{display:inline-flex;align-items:center;justify-content:center;width:14px;height:14px;border-radius:50%;background:var(--border);color:var(--text-muted);font-size:9px;cursor:help;font-weight:700;position:relative;flex-shrink:0;}
+  .tooltip-icon:hover .tooltip-popup{opacity:1;pointer-events:auto;transform:translateY(0);}
+  .tooltip-popup{position:absolute;bottom:calc(100% + 8px);left:50%;transform:translateX(-50%) translateY(4px);background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:10px 12px;font-size:12px;color:var(--text-dim);max-width:220px;width:220px;z-index:100;opacity:0;pointer-events:none;transition:all 0.15s;text-transform:none;letter-spacing:0;font-weight:400;line-height:1.5;white-space:normal;}
+
+  .loading-overlay{display:none;flex-direction:column;align-items:center;justify-content:center;padding:48px 20px;text-align:center;}
+  .loading-overlay.active{display:flex;}
+  .loading-spinner{width:48px;height:48px;border:3px solid var(--border);border-top-color:var(--accent);border-radius:50%;animation:spin 0.8s linear infinite;margin-bottom:24px;}
+  @keyframes spin{to{transform:rotate(360deg);}}
+  .loading-steps{list-style:none;}
+  .loading-steps li{font-size:13px;color:var(--text-muted);padding:4px 0;opacity:0;transition:opacity 0.3s,color 0.3s;font-family:'JetBrains Mono',monospace;}
+  .loading-steps li.visible{opacity:1;}
+  .loading-steps li.done{color:var(--accent);}
+  .loading-steps li.done::before{content:'✓ ';color:var(--accent);}
+  .loading-steps li.current::before{content:'› ';color:var(--accent);}
+
+  .results{display:none;}.results.active{display:block;}
+  .result-header{font-size:12px;color:var(--text-muted);margin-bottom:16px;font-family:'JetBrains Mono',monospace;text-transform:uppercase;letter-spacing:1px;}
+  .result-score{text-align:center;padding:20px 0 16px;border-bottom:1px solid var(--border);margin-bottom:16px;}
+  .score-val{font-family:'JetBrains Mono',monospace;font-size:52px;font-weight:500;}
+  .score-label{font-size:12px;color:var(--text-muted);text-transform:uppercase;letter-spacing:1.5px;margin-top:4px;}
+  .result-verdict{margin-top:20px;padding:18px;border-radius:10px;background:var(--red-dim);border:1px solid rgba(255,77,77,0.2);}
+  .result-verdict.verdict-ok{background:var(--orange-dim);border-color:rgba(255,159,67,0.2);}
+  .result-verdict.verdict-good{background:var(--accent-dim);border-color:var(--accent-border);}
+  .verdict-title{font-size:15px;font-weight:700;margin-bottom:8px;}
+  .verdict-text{font-size:13px;color:var(--text-dim);line-height:1.7;}.verdict-text strong{color:var(--text);}
+  .result-cta{display:block;text-align:center;margin-top:16px;padding:13px;background:var(--accent);color:var(--bg);border:none;border-radius:8px;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:700;cursor:pointer;text-decoration:none;transition:all 0.2s;}
+  .result-cta:hover{transform:translateY(-1px);}
+  .reset-btn{width:100%;margin-top:8px;padding:10px;background:transparent;border:1px solid var(--border);border-radius:8px;color:var(--text-dim);font-family:'DM Sans',sans-serif;font-size:13px;cursor:pointer;}
+
+  /* Feature 2 — KPI Bars */
+  .kpi-bars-wrap{margin-bottom:16px;}
+  .kpi-bar-section{margin:6px 0 22px;}
+  .kpi-bar-header{display:flex;justify-content:space-between;font-size:12px;margin-bottom:6px;align-items:center;}
+  .kpi-bar-label{color:var(--text-dim);font-weight:500;}
+  .kpi-bar-values{font-family:'JetBrains Mono',monospace;color:var(--text-muted);font-size:11px;}
+  .kpi-bar-values strong{color:var(--text);}
+  .kpi-bar-track{height:8px;background:var(--bg);border-radius:4px;position:relative;overflow:visible;margin-bottom:20px;}
+  .kpi-bar-fill{height:100%;border-radius:4px;transition:width 0.6s ease-out;width:0;}
+  .kpi-bench-line{position:absolute;top:-4px;width:2px;height:16px;background:rgba(255,255,255,0.3);border-radius:1px;}
+  .kpi-bench-label{position:absolute;top:18px;font-size:9px;color:var(--text-muted);transform:translateX(-50%);font-family:'JetBrains Mono',monospace;white-space:nowrap;}
+  .kpi-badge-row{display:flex;justify-content:flex-end;margin-top:-12px;}
+  .metric-badge{font-size:10px;font-weight:700;padding:4px 8px;border-radius:100px;text-transform:uppercase;letter-spacing:0.8px;white-space:nowrap;}
+  .badge-good{background:var(--green-dim);color:var(--green);}
+  .badge-ok{background:var(--orange-dim);color:var(--orange);}
+  .badge-bad{background:var(--red-dim);color:var(--red);}
+
+  /* Feature 3 — Quick Wins */
+  .quick-wins{margin-top:20px;margin-bottom:20px;}
+  .quick-wins-title{font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:2px;color:var(--accent);margin-bottom:12px;font-weight:500;}
+  .qw-card{display:flex;gap:12px;align-items:flex-start;background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:16px;margin-bottom:10px;}
+  .qw-icon{font-size:22px;flex-shrink:0;width:32px;text-align:center;margin-top:2px;}
+  .qw-body{}
+  .qw-title{font-size:14px;font-weight:700;margin-bottom:4px;}
+  .qw-text{font-size:13px;color:var(--text-muted);line-height:1.6;margin-bottom:6px;}
+  .qw-link{font-size:12px;color:var(--accent);font-weight:600;}
+  .qw-link:hover{text-decoration:underline;}
+
+  /* Feature 6 — Email Capture */
+  .email-capture{background:var(--accent-dim);border:1px solid var(--accent-border);border-radius:var(--radius);padding:20px;margin-top:16px;}
+  .capture-icon{font-size:22px;margin-bottom:8px;}
+  .capture-text{margin-bottom:12px;}
+  .capture-text strong{display:block;font-size:14px;font-weight:700;margin-bottom:4px;}
+  .capture-text span{font-size:13px;color:var(--text-dim);line-height:1.5;}
+  .capture-row{display:flex;gap:8px;}
+  .capture-row input{flex:1;padding:10px 12px;background:var(--bg);border:1px solid var(--border);border-radius:8px;color:var(--text);font-family:'DM Sans',sans-serif;font-size:14px;outline:none;}
+  .capture-row input:focus{border-color:var(--accent-border);}
+  .capture-row button{padding:10px 16px;background:var(--accent);color:var(--bg);border:none;border-radius:8px;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:700;cursor:pointer;white-space:nowrap;}
+  .capture-success{font-size:13px;color:var(--accent);margin-top:10px;display:none;}
+  .capture-error{font-size:12px;color:var(--red);margin-top:6px;display:none;}
+
+  /* TRUST */
+  .trust{padding:80px 48px;position:relative;overflow:hidden;}
+  .trust::before{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 0%,rgba(200,255,46,0.02) 40%,rgba(200,255,46,0.03) 60%,transparent 100%);pointer-events:none;}
+  .trust-inner{max-width:1200px;margin:0 auto;position:relative;}
+  .trust-header{margin-bottom:40px;}
+  .trust-headline{font-family:'Playfair Display',serif;font-size:clamp(24px,3vw,36px);font-weight:700;letter-spacing:-1px;line-height:1.2;max-width:500px;}
+  .trust-stats-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-bottom:40px;}
+  .trust-stat-card{background:var(--bg-card);border:1px solid var(--border);border-radius:12px;padding:22px 16px;text-align:center;transition:border-color 0.3s;}
+  .trust-stat-card:hover{border-color:var(--accent-border);}
+  .trust-stat-val{font-family:'JetBrains Mono',monospace;font-size:26px;font-weight:500;color:var(--accent);margin-bottom:4px;}
+  .trust-stat-label{font-size:11px;color:var(--text-muted);}
+  .trust-logos-row{padding-top:36px;border-top:1px solid var(--border);}
+  .trust-logos-label{font-size:11px;text-transform:uppercase;letter-spacing:2px;color:var(--text-muted);margin-bottom:28px;text-align:center;}
+  .trust-logos{display:flex;align-items:center;justify-content:center;gap:48px;flex-wrap:wrap;}
+  .trust-logo{height:32px;color:var(--text-muted);opacity:0.55;transition:opacity 0.3s;}
+  .trust-logo:hover{opacity:0.9;}
+  .trust-logo-tall{height:40px;}
+  .trust-logo-wide{height:22px;}
+  .trust-divider{width:1px;height:28px;background:var(--border);}
+  .trust-badge{display:inline-flex;align-items:center;gap:8px;padding:8px 16px;border:1px solid var(--accent-border);border-radius:100px;font-size:12px;font-weight:600;color:var(--accent);background:var(--accent-dim);}
+
+  .section-label{font-size:11px;text-transform:uppercase;letter-spacing:2.5px;color:var(--accent);margin-bottom:14px;font-weight:500;}
+  .section-title{font-family:'Playfair Display',serif;font-size:clamp(26px,3.5vw,42px);font-weight:700;letter-spacing:-1px;margin-bottom:48px;max-width:700px;line-height:1.15;}
+
+  .problems{padding:100px 48px;max-width:1200px;margin:0 auto;border-top:1px solid var(--border);}
+  .problem-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;}
+  .problem-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:32px;transition:all 0.3s;}
+  .problem-card:hover{border-color:var(--accent-border);transform:translateY(-2px);}
+  .problem-icon{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:20px;margin-bottom:20px;background:var(--accent-dim);border:1px solid var(--accent-border);}
+  .problem-card h4{font-size:17px;font-weight:700;margin-bottom:10px;}
+  .problem-card p{font-size:14px;color:var(--text-muted);line-height:1.6;}
+
+  .services{padding:100px 48px;max-width:1200px;margin:0 auto;border-top:1px solid var(--border);}
+  .services-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;}
+  .service-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:32px;transition:all 0.3s;position:relative;overflow:hidden;display:flex;flex-direction:column;}
+  .service-card:hover{border-color:var(--accent-border);transform:translateY(-2px);}
+  .service-card.highlight{border-color:var(--accent-border);}
+  .service-card.highlight::before{content:'';position:absolute;inset:-1px;background:linear-gradient(135deg,rgba(200,255,46,0.06),transparent 60%);border-radius:var(--radius);pointer-events:none;}
+  .service-tag{display:inline-block;font-size:10px;text-transform:uppercase;letter-spacing:1.5px;padding:4px 10px;border-radius:4px;font-weight:700;margin-bottom:14px;width:fit-content;}
+  .tag-entry{background:var(--accent-dim);color:var(--accent);}
+  .tag-pop{background:rgba(130,100,255,0.12);color:#A08CFF;}
+  .tag-team{background:rgba(59,178,255,0.12);color:#3BB2FF;}
+  .tag-pro{background:rgba(255,159,67,0.12);color:var(--orange);}
+  .service-card h3{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;margin-bottom:10px;letter-spacing:-0.5px;}
+  .service-desc{font-size:14px;color:var(--text-muted);line-height:1.7;margin-bottom:18px;}
+  .service-includes{list-style:none;flex-grow:1;}
+  .service-includes li{font-size:13px;color:var(--text-dim);padding:4px 0 4px 18px;position:relative;}
+  .service-includes li::before{content:'→';position:absolute;left:0;color:var(--accent);font-size:11px;}
+  .service-cta-link{display:block;margin-top:20px;padding-top:16px;border-top:1px solid var(--border);font-size:13px;font-weight:700;color:var(--accent);}
+
+  /* Feature 9 — Process */
+  .process{padding:100px 48px;max-width:1200px;margin:0 auto;border-top:1px solid var(--border);}
+  .process-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;position:relative;}
+  .process-grid::before{content:'';position:absolute;top:28px;left:calc(12.5% + 10px);right:calc(12.5% + 10px);height:1px;background:var(--border);z-index:0;}
+  .process-step{padding:0 16px;position:relative;z-index:1;}
+  .process-step.step-highlight .process-num{color:var(--accent);background:var(--accent-dim);border-color:var(--accent-border);}
+  .process-num{font-family:'JetBrains Mono',monospace;font-size:22px;font-weight:500;color:var(--text-muted);background:var(--bg-card);border:1px solid var(--border);border-radius:50%;width:56px;height:56px;display:flex;align-items:center;justify-content:center;margin-bottom:20px;}
+  .process-step-title{font-size:16px;font-weight:700;margin-bottom:8px;}
+  .process-step-sub{font-size:13px;color:var(--text-muted);line-height:1.6;}
+
+  /* Feature 8 — FAQ */
+  .faq{padding:100px 48px;max-width:1200px;margin:0 auto;border-top:1px solid var(--border);}
+  .faq-list{margin-top:0;}
+  .faq-item{border-bottom:1px solid var(--border);}
+  .faq-question{display:flex;justify-content:space-between;align-items:center;padding:20px 0;cursor:pointer;gap:16px;}
+  .faq-question h4{font-size:16px;font-weight:600;line-height:1.4;flex:1;}
+  .faq-arrow{color:var(--accent);font-size:18px;transition:transform 0.25s;flex-shrink:0;font-weight:300;}
+  .faq-item.open .faq-arrow{transform:rotate(45deg);}
+  .faq-answer{max-height:0;overflow:hidden;transition:max-height 0.35s ease,padding 0.25s;}
+  .faq-item.open .faq-answer{max-height:200px;padding-bottom:20px;}
+  .faq-answer p{font-size:14px;color:var(--text-muted);line-height:1.7;}
+
+  .cta-section{padding:100px 48px;text-align:center;position:relative;}
+  .cta-section::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(200,255,46,0.05) 0%,transparent 60%);pointer-events:none;}
+  .cta-section h2{font-family:'Playfair Display',serif;font-size:clamp(28px,4vw,44px);font-weight:700;letter-spacing:-1px;margin-bottom:16px;}
+  .cta-section p{color:var(--text-muted);font-size:16px;max-width:440px;margin:0 auto 32px;}
+  .cta-btn{display:inline-flex;align-items:center;gap:10px;background:var(--accent);color:var(--bg);padding:16px 36px;border-radius:10px;font-weight:700;font-size:15px;transition:all 0.2s;}
+  .cta-btn:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(200,255,46,0.2);}
+  footer{padding:28px 48px;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;font-size:12px;color:var(--text-muted);}
+
+  /* Feature 7 — Exit Intent Overlay */
+  .exit-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.75);backdrop-filter:blur(4px);z-index:1000;display:none;align-items:center;justify-content:center;padding:20px;}
+  .exit-overlay.active{display:flex;}
+  .exit-modal{background:var(--bg-card);max-width:480px;width:100%;border:1px solid var(--border);border-radius:16px;padding:40px;position:relative;}
+  .exit-close{position:absolute;top:16px;right:20px;background:none;border:none;color:var(--text-muted);font-size:24px;cursor:pointer;line-height:1;}
+  .exit-close:hover{color:var(--text);}
+  .exit-label{font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:2px;color:var(--accent);margin-bottom:12px;}
+  .exit-content h3{font-family:'Playfair Display',serif;font-size:24px;font-weight:700;margin-bottom:12px;letter-spacing:-0.5px;}
+  .exit-content p{font-size:14px;color:var(--text-muted);line-height:1.7;margin-bottom:20px;}
+  .exit-form{display:flex;gap:8px;margin-bottom:12px;}
+  .exit-form input{flex:1;padding:11px 14px;background:var(--bg);border:1px solid var(--border);border-radius:8px;color:var(--text);font-family:'DM Sans',sans-serif;font-size:14px;outline:none;}
+  .exit-form input:focus{border-color:var(--accent-border);}
+  .exit-form button{padding:11px 18px;background:var(--accent);color:var(--bg);border:none;border-radius:8px;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:700;cursor:pointer;white-space:nowrap;}
+  .exit-skip{font-size:12px;color:var(--text-muted);cursor:pointer;text-align:center;margin-top:8px;}
+  .exit-skip:hover{color:var(--text-dim);}
+  .exit-success{font-size:13px;color:var(--accent);margin-top:10px;display:none;}
+  .exit-error{font-size:12px;color:var(--red);margin-top:6px;display:none;}
+
+  @media(max-width:900px){
+    nav{padding:14px 20px;}
+    .nav-links{gap:16px;}
+    .nav-links a:not(.nav-cta){display:none;}
+    .hero{grid-template-columns:1fr;padding:40px 20px 28px;gap:28px;}
+    .hero-text h1{font-size:32px;letter-spacing:-1px;}
+    .hero-text .sub{font-size:15px;}
+    .checker{padding:24px 20px;}
+    .checker h3{font-size:18px;}
+    .form-row-3,.form-row-2{grid-template-columns:1fr;}
+    .capture-row{flex-direction:column;}
+    .trust{padding:48px 20px;}
+    .trust-stats-grid{grid-template-columns:repeat(3,1fr);gap:10px;}
+    .trust-stat-card{padding:16px 12px;}
+    .trust-stat-val{font-size:22px;}
+    .trust-logos{gap:28px;}
+    .problems{padding:60px 20px;}
+    .problem-grid{grid-template-columns:1fr;}
+    .services{padding:60px 20px;}
+    .services-grid{grid-template-columns:1fr;}
+    .process{padding:60px 20px;}
+    .process-grid{grid-template-columns:1fr;gap:32px;}
+    .process-grid::before{display:none;}
+    .process-step{padding:0;}
+    .faq{padding:60px 20px;}
+    .cta-section{padding:60px 20px;}
+    footer{padding:20px;flex-direction:column;gap:6px;text-align:center;}
+    .score-val{font-size:44px;}
+    .exit-form{flex-direction:column;}
+    .exit-modal{padding:28px 20px;}
+  }
+  @media(max-width:400px){
+    .hero{padding:32px 16px 20px;}
+    .checker{padding:20px 16px;}
+    nav{padding:12px 16px;}
+    .trust{padding:40px 16px;}
+    .trust-stats-grid{grid-template-columns:1fr 1fr;}
+    .problems,.services,.process,.faq{padding:48px 16px;}
+  }
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Shop Effizienz-Checker",
+  "description": "Kostenloser Shopify Shop-Check: Vergleiche deine Conversion Rate, AOV und Add-to-Cart Rate mit Branchen-Benchmarks und entdecke dein ungenutztes Umsatzpotenzial.",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "Web",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "EUR"
+  },
+  "url": "https://daniel.de/"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Daniel",
+  "jobTitle": "E-Commerce Berater & Shopify CRO Spezialist",
+  "url": "https://daniel.de/",
+  "worksFor": {
+    "@type": "Organization",
+    "name": "daniel. E-Commerce Beratung"
+  },
+  "knowsAbout": ["Shopify", "Conversion Rate Optimization", "DTC E-Commerce", "A/B Testing", "Shopify CRO"]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Ab welchem Umsatz lohnt sich eine CRO-Beratung?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Ab ca. 300.000€ Jahresumsatz ist der ROI fast immer positiv. Darunter ist es von Fall zu Fall verschieden — das klären wir im Erstgespräch." }
+    },
+    {
+      "@type": "Question",
+      "name": "Was kostet ein Shopify Audit?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Ein Quick Audit startet ab einem Tagessatz. Den genauen Preis besprechen wir nach einem kurzen Kennenlernen — er hängt von der Komplexität deines Setups ab." }
+    },
+    {
+      "@type": "Question",
+      "name": "Wie unterscheidet sich eine CRO-Beratung von einer Agentur?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Eine Agentur baut oder managed. Ich optimiere strategisch und datenbasiert — entweder als Berater oder als Fractional Lead der dein Team führt. Ohne Agentur-Overhead." }
+    },
+    {
+      "@type": "Question",
+      "name": "Ich habe kein internes Tech-Team — geht das trotzdem?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Ja. Ich arbeite mit Shopify-nativen Mitteln und empfehle erprobte Apps. Für größere Entwicklungen kann ich Freelancer-Empfehlungen geben." }
+    },
+    {
+      "@type": "Question",
+      "name": "Wie lange dauert es bis ich Ergebnisse sehe?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Erste Quick Wins in 2–4 Wochen. Signifikante KPI-Bewegung nach 6–12 Wochen systematischem Testing." }
+    },
+    {
+      "@type": "Question",
+      "name": "Arbeitest du auch mit kleineren Shops?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Ich nehme Shops ab ca. 500k€ Jahresumsatz an, da der Hebel darunter oft zu gering ist für den Aufwand. Ausnahmen gibt es." }
+    },
+    {
+      "@type": "Question",
+      "name": "Was ist ein Fractional Head of E-Commerce?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Du bekommst die Erfahrung und Führung eines erfahrenen E-Commerce-Leads, ohne ihn fest einzustellen. 5–10h pro Woche, monatlich kündbar." }
+    },
+    {
+      "@type": "Question",
+      "name": "Hast du Erfahrung in meiner Branche?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Ich habe Brands aus Beauty, Fashion, Supplements, Food, Home & Pets betreut. Die Optimierungsprinzipien übertragen sich — branchenspezifische Benchmarks sind im Checker direkt eingebaut." }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<nav>
+  <div class="logo-text">daniel<span>.</span></div>
+  <div class="nav-links">
+    <a href="#checker">Shop Check</a>
+    <a href="#services">Leistungen</a>
+    <a href="#contact" class="nav-cta">Erstgespräch →</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-text">
+    <div class="eyebrow">Für DTC & Shopify Brands</div>
+    <h1>Dein Shop macht Umsatz. Aber macht er <em>genug?</em></h1>
+    <p class="sub">Die meisten Shopify-Shops verschenken 20-40% ihres Umsatzpotenzials — durch schlechte Nutzerführung, fehlende Tests und blinde Flecken im Funnel. Finde heraus, wo du stehst.</p>
+    <a href="#checker" class="hero-arrow">Kostenloser Shop-Check starten →</a>
+  </div>
+
+  <div class="checker" id="checker">
+    <div class="checker-title">⚡ Shop Effizienz-Checker</div>
+    <h3>Wie performt dein Shop wirklich?</h3>
+    <p class="checker-sub">4 KPIs. Dein Branchenvergleich. In Sekunden.</p>
+    <div id="checkerForm">
+      <div class="form-row form-row-2">
+        <div class="form-group">
+          <label>Shop URL</label>
+          <input type="url" id="shopUrl" placeholder="https://deinshop.de">
+        </div>
+        <div class="form-group">
+          <label>Branche</label>
+          <select id="industry">
+            <option value="">Branche wählen…</option>
+            <option value="beauty">Beauty & Kosmetik</option>
+            <option value="food">Food & Getränke</option>
+            <option value="supplements">Supplements & Vitamine</option>
+            <option value="fashion">Fashion & Bekleidung</option>
+            <option value="accessories">Schmuck & Accessories</option>
+            <option value="home">Home & Living</option>
+            <option value="health">Health & Wellness</option>
+            <option value="pets">Haustiere & Tierbedarf</option>
+            <option value="sports">Sport & Outdoor</option>
+            <option value="tech">Consumer Electronics</option>
+            <option value="baby">Baby & Kids</option>
+            <option value="sustainable">Nachhaltige Produkte</option>
+            <option value="cleaning">Reinigung & Haushalt</option>
+            <option value="cbd">CBD & Cannabis</option>
+            <option value="garden">Garten & Pflanzen</option>
+          </select>
+          <div class="field-error" id="err-industry">Bitte wähle eine Branche aus.</div>
+        </div>
+      </div>
+      <div class="form-row form-row-2">
+        <div class="form-group">
+          <label>
+            Conversion Rate (%)
+            <span class="tooltip-icon">?<span class="tooltip-popup">Bestellungen ÷ Sessions × 100. Zu finden in: Shopify Analytics → Übersicht</span></span>
+          </label>
+          <input type="number" id="userCR" placeholder="z.B. 2.1" step="0.1">
+          <div class="field-error" id="err-cr">Bitte gib deine Conversion Rate ein.</div>
+          <div class="field-warn" id="warn-cr"></div>
+        </div>
+        <div class="form-group">
+          <label>
+            Ø Warenkorb AOV (€)
+            <span class="tooltip-icon">?<span class="tooltip-popup">Gesamtumsatz ÷ Anzahl Bestellungen. In Shopify: Berichte → Verkäufe</span></span>
+          </label>
+          <input type="number" id="userAOV" placeholder="z.B. 45" step="1">
+          <div class="field-error" id="err-aov">Bitte gib deinen durchschnittlichen Warenkorb ein.</div>
+        </div>
+      </div>
+      <div class="form-row form-row-3">
+        <div class="form-group">
+          <label>
+            Add-to-Cart Rate (%)
+            <span class="tooltip-icon">?<span class="tooltip-popup">Add-to-Cart-Klicks ÷ Sessions × 100. Via GA4 oder Shopify Analytics</span></span>
+          </label>
+          <input type="number" id="userATC" placeholder="z.B. 8.5" step="0.1">
+          <div class="field-error" id="err-atc">Bitte gib deine Add-to-Cart Rate ein.</div>
+          <div class="field-warn" id="warn-atc"></div>
+        </div>
+        <div class="form-group">
+          <label>
+            Returning Customers (%)
+            <span class="tooltip-icon">?<span class="tooltip-popup">Anteil Bestellungen von Kunden die schon mind. 1x gekauft haben</span></span>
+          </label>
+          <input type="number" id="userReturn" placeholder="z.B. 22" step="0.1">
+          <div class="field-error" id="err-ret">Bitte gib deinen Returning-Customers-Anteil ein.</div>
+        </div>
+        <div class="form-group">
+          <label>
+            Sessions / Monat
+            <span class="tooltip-icon">?<span class="tooltip-popup">Gesamte Sitzungen/Monat aus Google Analytics oder Shopify Analytics</span></span>
+          </label>
+          <input type="number" id="userSessions" placeholder="z.B. 50000" step="1000">
+          <div class="field-error" id="err-sessions">Bitte gib deine monatlichen Sessions ein.</div>
+          <div class="field-warn" id="warn-sessions"></div>
+        </div>
+      </div>
+      <button class="check-btn" onclick="runCheck()">Shop analysieren →</button>
+    </div>
+    <div class="loading-overlay" id="loadingOverlay">
+      <div class="loading-spinner"></div>
+      <ul class="loading-steps">
+        <li id="ls1">Shop-Daten werden geladen…</li>
+        <li id="ls2">Branchen-Benchmarks abgleichen…</li>
+        <li id="ls3">Funnel-Analyse durchführen…</li>
+        <li id="ls4">KPI-Bewertung berechnen…</li>
+        <li id="ls5">Umsatzpotenzial kalkulieren…</li>
+        <li id="ls6">Report generieren…</li>
+      </ul>
+    </div>
+    <div class="results" id="results">
+      <div id="scoreArea"></div>
+      <div class="result-header" id="resultDomain"></div>
+      <div class="kpi-bars-wrap" id="kpiBars"></div>
+      <div id="potentialBox" style="display:none;margin-top:20px;padding:24px;border-radius:12px;background:linear-gradient(135deg,rgba(255,77,77,0.08),rgba(255,159,67,0.06));border:1px solid rgba(255,77,77,0.18);"></div>
+      <div class="quick-wins" id="quickWinsBlock" style="display:none;">
+        <div class="quick-wins-title">💡 Deine Top Quick Wins</div>
+        <div id="quickWinsCards"></div>
+      </div>
+      <div class="result-verdict" id="verdict"></div>
+      <a href="#contact" class="result-cta" id="resultCta">Kostenloses Audit-Gespräch buchen →</a>
+      <div class="email-capture" id="emailCapture">
+        <div class="capture-icon">📩</div>
+        <div class="capture-text">
+          <strong>Ergebnis sichern</strong>
+          <span>Ich schicke dir die Auswertung als PDF + den kostenlosen DTC Benchmark Report für deine Branche.</span>
+        </div>
+        <div class="capture-row">
+          <input type="email" id="captureEmail" placeholder="deine@email.de">
+          <button onclick="submitCapture()">Senden →</button>
+        </div>
+        <div class="capture-error" id="captureError"></div>
+        <div class="capture-success" id="captureSuccess">✓ Schau in dein Postfach — ich melde mich innerhalb von 24h.</div>
+      </div>
+      <button class="reset-btn" onclick="resetCheck()">Erneut testen</button>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST -->
+<section class="trust">
+  <div class="trust-inner">
+    <div class="trust-header">
+      <div class="section-label">Meine Erfahrung</div>
+      <div class="trust-headline">7 Jahre E-Commerce Leadership für DTC Brands</div>
+    </div>
+    <div class="trust-content">
+      <div class="trust-stats-grid">
+        <div class="trust-stat-card"><div class="trust-stat-val">300M+€</div><div class="trust-stat-label">Online-Umsatz verantwortet</div></div>
+        <div class="trust-stat-card"><div class="trust-stat-val">~140M</div><div class="trust-stat-label">Sessions betreut</div></div>
+        <div class="trust-stat-card"><div class="trust-stat-val">500+</div><div class="trust-stat-label">A/B Tests umgesetzt</div></div>
+        <div class="trust-stat-card"><div class="trust-stat-val">8+</div><div class="trust-stat-label">DTC Brands betreut</div></div>
+        <div class="trust-stat-card"><div class="trust-stat-val">12</div><div class="trust-stat-label">Köpfiges Team aufgebaut</div></div>
+      </div>
+      <div class="trust-logos-row">
+        <div class="trust-logos-label">Zusammengearbeitet mit</div>
+        <div class="trust-logos">
+<svg class="trust-logo" viewBox="0 0 183 46" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M32.2462 46C32.2462 46 27.9787 44.1033 16.1231 44.1033C4.26748 44.1033 0 46 0 46V0H32.2477V46H32.2462ZM1.42097 1.42249V44.5775C1.42097 44.5775 7.11246 41.7325 16.1216 41.7325C25.1307 41.7325 30.8222 44.5775 30.8222 44.5775V1.42249H1.41945H1.42097Z"/><path fill="currentColor" d="M13.7508 35.5662C13.7432 38.4112 11.8542 41.9689 9.00921 42.3246L13.7508 42.206C14.6992 39.361 15.6475 37.4644 14.6992 34.6179C14.1627 33.0069 12.0274 30.7866 9.28732 29.165C7.18853 27.9233 3.19917 28.2167 2.36938 27.0312C3.31771 29.8762 4.26604 36.5161 13.7508 35.5677V35.5662Z"/><path fill="currentColor" d="M2.96194 21.459C3.74614 24.2006 7.14432 26.579 8.63824 27.4651C5.94979 26.4088 4.39507 27.0122 3.55465 25.9635C2.88292 25.1246 2.82213 22.6945 2.96194 21.459Z"/><path fill="currentColor" d="M9.95746 24.1852C12.7021 25.9192 15.0547 27.1487 14.462 31.7733C11.3328 26.8371 3.30397 24.2703 3.43618 17.5469C5.92555 21.5773 10.7872 22.0514 13.5137 25.135C12.4103 24.4998 10.7037 24.3964 9.95746 24.1867V24.1852Z"/><path fill="currentColor" d="M10.7872 16.9525C12.4467 19.3233 12.9209 20.5087 13.2765 22.7625C8.17927 20.8658 6.83733 17.2412 7.02426 14.9783C6.16256 16.3598 6.8738 17.5452 7.1124 19.0862C3.55617 15.2929 4.66863 11.0528 6.04553 9.95703C6.04553 12.4464 9.03337 14.4449 10.7872 16.9525Z"/><path fill="currentColor" d="M10.1944 13.8699C9.4923 11.8744 8.41631 8.53399 10.0759 5.21484C5.33425 7.46712 7.70507 11.3805 10.1944 13.8699Z"/><path fill="currentColor" d="M13.7507 11.2626C13.8587 12.875 12.8024 12.9221 12.921 18.0209C11.2219 15.179 9.45592 5.73825 12.6839 3.32031C11.617 9.0118 13.6322 9.48597 13.7507 11.2641V11.2626Z"/><path fill="currentColor" d="M16.3494 2.34254C12.3084 2.19665 13.4528 8.00516 14.699 9.72097C15.588 8.53708 20.3905 2.48844 16.3494 2.34254Z"/><path fill="currentColor" d="M19.7979 9.95818C20.5091 11.2621 19.3237 14.1071 18.2158 15.8867C16.4787 18.677 14.8176 22.1709 15.4103 24.1861C13.424 21.4871 14.2249 16.598 14.5806 14.4643C14.9362 12.3305 15.766 10.4339 16.9514 8.77276C18.1368 7.11319 19.3222 5.6907 19.4407 3.31836C23.8268 6.75605 21.3374 14.1071 19.9149 16.4779C20.2401 13.8837 20.8632 10.6679 19.7964 9.95666L19.7979 9.95818Z"/><path fill="currentColor" d="M23.2355 11.7361C23.9467 8.77259 22.6428 5.21484 22.6428 5.21484C29.6382 10.4306 26.5547 14.344 21.5759 16.5963C21.5759 16.5963 22.468 14.9367 23.2355 11.7361Z"/><path fill="currentColor" d="M21.1519 24.5701C18.968 28.2175 18.2567 29.64 17.5455 31.7738C17.3768 28.64 18.0196 27.2692 18.4938 25.134C17.1899 27.5048 16.6093 28.6446 16.123 29.8756C15.2932 26.675 17.9011 18.4941 19.0865 18.4941C20.2719 18.4941 21.1047 22.6112 21.1519 24.5686V24.5701Z"/><path fill="currentColor" d="M20.8648 18.0207C22.4058 19.5617 22.6414 21.7106 22.5244 23.1179C23.3542 21.5769 25.3694 20.9842 26.5548 19.3246C27.7599 17.6377 28.494 16.007 27.7402 12.9219C25.7691 16.5404 23.5517 17.1985 20.8633 18.0191L20.8648 18.0207Z"/><path fill="currentColor" d="M20.1536 29.876C23.1171 27.0311 26.8223 26.876 28.69 25.1344C30.4682 23.4748 28.3344 18.9688 28.3344 18.9688C28.2159 20.9839 25.491 22.1055 24.0669 23.4961C22.2052 25.3107 20.5837 27.2985 20.1551 29.876H20.1536Z"/><path fill="currentColor" d="M17.5456 34.6185C16.5973 37.4635 17.5456 39.3601 18.494 42.2067L23.2356 42.3252C20.3906 41.9696 18.4849 38.4133 18.494 35.5668C27.0304 36.5152 29.5198 29.9939 29.8754 26.082C28.0973 27.9787 25.845 27.8601 23.9499 28.8085C20.7979 30.386 18.1004 32.9513 17.5456 34.6185Z"/><path fill="currentColor" d="M65.3738 13.918L65.1443 14.3496C64.661 15.2645 64.5592 15.494 64.5334 23.1216L64.5075 32.0973C64.5075 32.0973 63.9741 32.0213 63.1352 32.0213C62.1428 32.0213 61.661 32.0973 61.661 32.0973L53.8297 17.4514C53.4224 16.7143 53.1428 15.6459 53.1428 15.6459V23.1216C53.1428 30.5213 53.2446 30.6231 53.7781 31.6399L54.0075 32.0715C54.0075 32.0715 53.4224 32.0213 52.2537 32.0213C51.0851 32.0213 50.5759 32.0715 50.5759 32.0715L50.8054 31.6399C51.2887 30.725 51.4407 30.4955 51.4407 22.8678C51.4407 15.2402 51.3388 15.3663 50.8054 14.3496L50.5759 13.918C50.5759 13.918 51.085 13.9681 52.5592 13.9681C53.7537 13.9681 54.2887 13.918 54.2887 13.918L62.0942 28.538C62.6033 29.5046 62.8054 30.3435 62.8054 30.3435V22.8678C62.8054 15.4681 62.7036 15.3663 62.1702 14.3496L61.9407 13.918C61.9407 13.918 62.5258 13.9681 63.6945 13.9681C64.8632 13.9681 65.3723 13.918 65.3723 13.918H65.3738Z"/></svg>
+<div class="trust-divider"></div>
+<div class="trust-badge">
+<svg viewBox="0 0 86 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="height:14px;"><path d="M29.6797 12.868C28.9417 12.475 28.5625 12.1437 28.5625 11.6883C28.5625 11.1089 29.0893 10.7367 29.9121 10.7367C30.8698 10.7367 31.725 11.1297 31.725 11.1297L32.3995 9.10167C32.3995 9.10167 31.7793 8.62553 29.9538 8.62553C27.4134 8.62553 25.6527 10.0533 25.6527 12.0605C25.6527 13.1986 26.4748 14.0678 27.5716 14.6881C28.4572 15.1844 28.7736 15.5365 28.7736 16.0535C28.7736 16.5914 28.3308 17.026 27.5087 17.026C26.2835 17.026 25.1265 16.405 25.1265 16.405L24.4097 18.433C24.4097 18.433 25.4786 19.1365 27.277 19.1365C29.8916 19.1365 31.768 17.8743 31.768 15.5982C31.7674 14.3783 30.8189 13.5091 29.6797 12.868Z" fill="currentColor"/><path d="M14.326 2.853C14.326 2.853 14.0575 2.93011 13.6164 3.06504C13.5397 2.81444 13.4247 2.52529 13.2712 2.21685C12.7726 1.253 12.0247 0.732515 11.1425 0.732515C11.0849 0.732515 11.0274 0.732515 10.9507 0.751792C10.9315 0.713238 10.8932 0.69396 10.874 0.655406C10.4904 0.23131 9.99178 0.0385387 9.39726 0.0578158C8.24658 0.0963701 7.09589 0.925286 6.17534 2.40962C5.52329 3.45059 5.02466 4.76143 4.89041 5.78312C3.56712 6.18794 2.64658 6.47709 2.6274 6.49637C1.95616 6.70842 1.93699 6.7277 1.86027 7.36384C1.74521 7.84577 0 21.4361 0 21.4361L14.4986 23.9614V2.81444C14.4219 2.83372 14.3644 2.83372 14.326 2.853Z" fill="currentColor"/><path d="M14.9781 23.8843L21 22.3807C21 22.3807 18.411 4.78071 18.3918 4.66504C18.3726 4.54938 18.2767 4.47227 18.1808 4.47227C18.0849 4.47227 16.3973 4.43372 16.3973 4.43372C16.3973 4.43372 15.3616 3.43131 14.9781 3.04577V23.8843Z" fill="currentColor"/></svg> Partner</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="problems">
+  <div class="section-label">Das Problem</div>
+  <div class="section-title">Warum gute Shops trotzdem Umsatz und Profitabilität verschenken</div>
+  <div class="problem-grid">
+    <div class="problem-card">
+      <div class="problem-icon">📉</div>
+      <h4>Conversion-Blocker im Funnel</h4>
+      <p>Dein Traffic ist teuer. Aber dein Shop verwandelt nur einen Bruchteil der Besucher in Käufer — weil kleine UX-Fehler große Wirkung haben. Jeder verlorene Kauf treibt deinen CAC hoch.</p>
+    </div>
+    <div class="problem-card">
+      <div class="problem-icon">💸</div>
+      <h4>Steigende Akquise&shy;kosten fressen den Profit</h4>
+      <p>Hohe CPMs, teures UGC, Content Creator Fees — das ist DTC-Realität. Umso wichtiger, den Funnel von beiden Seiten zu optimieren. Jede Conversion, die liegen bleibt, färbt direkt auf die Marketing-Effizienz ab.</p>
+    </div>
+    <div class="problem-card">
+      <div class="problem-icon">🔬</div>
+      <h4>Kein Testing-Prozess</h4>
+      <p>Du änderst Dinge im Shop nach Bauchgefühl statt datenbasiert. Ohne A/B-Tests weißt du nicht, ob Änderungen helfen oder schaden — und Fehlinterpretationen führen zu falschen Entscheidungen.</p>
+    </div>
+    <div class="problem-card">
+      <div class="problem-icon">🧭</div>
+      <h4>Kein strategischer Lead</h4>
+      <p>Dein Team arbeitet im Tagesgeschäft, aber niemand priorisiert, was wirklich Impact hat. Es fehlt die Erfahrung eines E-Commerce-Leads, der den Überblick behält und die richtigen Hebel identifiziert.</p>
+    </div>
+  </div>
+</section>
+
+<section class="services" id="services">
+  <div class="section-label">Leistungen</div>
+  <div class="section-title">Vier Wege, wie wir gemeinsam skalieren können</div>
+  <div class="services-grid">
+    <div class="service-card">
+      <div class="service-tag tag-entry">Einstieg</div>
+      <h3>Quick Audit</h3>
+      <p class="service-desc">Kompakter, datengestützter Shop-Check mit Experten-Review. Konkrete, priorisierte Handlungsempfehlungen — innerhalb von 5 Werktagen.</p>
+      <ul class="service-includes"><li>UX- & Funnel-Analyse</li><li>Conversion-Blocker identifiziert</li><li>Priorisierte Quick Wins</li><li>30-min Ergebnis-Call</li></ul>
+      <span class="service-cta-link">Mehr erfahren →</span>
+    </div>
+    <div class="service-card highlight">
+      <div class="service-tag tag-pop">★ Meistgebucht</div>
+      <h3>Deep Dive Audit + Retainer</h3>
+      <p class="service-desc">Umfassende Analyse deines E-Commerce-Setups, dann kontinuierliche Betreuung als dein Fractional Head of E-Commerce.</p>
+      <ul class="service-includes"><li>Vollständiger Shop- & Tech-Audit</li><li>Strategischer Umsetzungsfahrplan</li><li>Monatliche Betreuung (5-10h/Wo)</li><li>A/B-Testing & CRO</li><li>Wöchentliche Sync-Calls</li></ul>
+      <span class="service-cta-link">Mehr erfahren →</span>
+    </div>
+    <div class="service-card">
+      <div class="service-tag tag-team">👤 Interim</div>
+      <h3>Interim E-Commerce Lead</h3>
+      <p class="service-desc">Dein Team braucht Führung — ob bei Elternzeit, Kündigung oder Wachstum. Ich übernehme die operative Leitung deines E-Commerce-Teams auf Zeit.</p>
+      <ul class="service-includes"><li>Team-Führung & Priorisierung</li><li>Sprint-Planung & Roadmap</li><li>Stakeholder-Management</li><li>Recruiting-Unterstützung</li><li>Übergabe an Nachfolger</li></ul>
+      <span class="service-cta-link">Mehr erfahren →</span>
+    </div>
+    <div class="service-card">
+      <div class="service-tag tag-pro">🌍 Projekt</div>
+      <h3>Internationali&shy;sierung</h3>
+      <p class="service-desc">Du willst in einen neuen Markt? Ich setze alles im Hintergrund um — Shopify Markets, Übersetzungen, Checkout, Compliance — bis zum Go-Live.</p>
+      <ul class="service-includes"><li>Markt-Analyse & Strategie</li><li>Shopify Markets Setup</li><li>Übersetzungspipeline</li><li>Checkout, Payment & Compliance</li><li>Go-Live Management</li></ul>
+      <span class="service-cta-link">Mehr erfahren →</span>
+    </div>
+  </div>
+</section>
+
+<!-- Feature 9 — Process -->
+<section class="process">
+  <div class="section-label">So läuft es ab</div>
+  <div class="section-title">Wie ich arbeite</div>
+  <div class="process-grid">
+    <div class="process-step step-highlight">
+      <div class="process-num">01</div>
+      <div class="process-step-title">Erstgespräch</div>
+      <div class="process-step-sub">30 Min, kein Pitch. Ich schaue mir deinen Shop an und sage dir ehrlich, ob und wie ich helfen kann.</div>
+    </div>
+    <div class="process-step">
+      <div class="process-num">02</div>
+      <div class="process-step-title">Audit</div>
+      <div class="process-step-sub">5 Werktage. Vollständige Analyse deines Shops + priorisierter Umsetzungsplan mit konkreten Hebeln.</div>
+    </div>
+    <div class="process-step">
+      <div class="process-num">03</div>
+      <div class="process-step-title">Umsetzung</div>
+      <div class="process-step-sub">Mit dir oder für dich — je nach Kapazität deines Teams. Ich bringe die Erfahrung, ihr die Plattform-Kenntnis.</div>
+    </div>
+    <div class="process-step">
+      <div class="process-num">04</div>
+      <div class="process-step-title">Messen & Skalieren</div>
+      <div class="process-step-sub">Monatliches KPI-Review, A/B-Tests, kontinuierliche Optimierung. Was funktioniert, wird skaliert.</div>
+    </div>
+  </div>
+</section>
+
+<!-- Feature 8 — FAQ -->
+<section class="faq">
+  <div class="section-label">FAQ</div>
+  <div class="section-title">Häufige Fragen</div>
+  <div class="faq-list">
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFaq(this)">
+        <h4>Ab welchem Umsatz lohnt sich eine CRO-Beratung?</h4>
+        <span class="faq-arrow">+</span>
+      </div>
+      <div class="faq-answer"><p>Ab ca. 300.000€ Jahresumsatz ist der ROI fast immer positiv. Darunter ist es von Fall zu Fall verschieden — das klären wir im Erstgespräch.</p></div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFaq(this)">
+        <h4>Was kostet ein Audit?</h4>
+        <span class="faq-arrow">+</span>
+      </div>
+      <div class="faq-answer"><p>Ein Quick Audit startet ab einem Tagessatz. Den genauen Preis besprechen wir nach einem kurzen Kennenlernen — er hängt von der Komplexität deines Setups ab.</p></div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFaq(this)">
+        <h4>Wie unterscheidet sich das von einer Agentur?</h4>
+        <span class="faq-arrow">+</span>
+      </div>
+      <div class="faq-answer"><p>Eine Agentur baut oder managed. Ich optimiere strategisch und datenbasiert — entweder als Berater oder als Fractional Lead der dein Team führt. Ohne Agentur-Overhead.</p></div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFaq(this)">
+        <h4>Ich habe kein internes Tech-Team — geht das trotzdem?</h4>
+        <span class="faq-arrow">+</span>
+      </div>
+      <div class="faq-answer"><p>Ja. Ich arbeite mit Shopify-nativen Mitteln und empfehle erprobte Apps. Für größere Entwicklungen kann ich Freelancer-Empfehlungen geben.</p></div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFaq(this)">
+        <h4>Wie lange dauert es bis ich Ergebnisse sehe?</h4>
+        <span class="faq-arrow">+</span>
+      </div>
+      <div class="faq-answer"><p>Erste Quick Wins in 2–4 Wochen. Signifikante KPI-Bewegung nach 6–12 Wochen systematischem Testing.</p></div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFaq(this)">
+        <h4>Arbeitest du auch mit kleineren Shops?</h4>
+        <span class="faq-arrow">+</span>
+      </div>
+      <div class="faq-answer"><p>Ich nehme Shops ab ca. 500k€ Jahresumsatz an, da der Hebel darunter oft zu gering ist für den Aufwand. Ausnahmen gibt es.</p></div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFaq(this)">
+        <h4>Was ist ein Fractional Head of E-Commerce?</h4>
+        <span class="faq-arrow">+</span>
+      </div>
+      <div class="faq-answer"><p>Du bekommst die Erfahrung und Führung eines erfahrenen E-Commerce-Leads, ohne ihn fest einzustellen. 5–10h pro Woche, monatlich kündbar.</p></div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFaq(this)">
+        <h4>Hast du Erfahrung in meiner Branche?</h4>
+        <span class="faq-arrow">+</span>
+      </div>
+      <div class="faq-answer"><p>Ich habe Brands aus Beauty, Fashion, Supplements, Food, Home & Pets betreut. Die Optimierungsprinzipien übertragen sich — branchenspezifische Benchmarks sind im Checker direkt eingebaut.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section" id="contact">
+  <h2>Bereit für den nächsten Schritt?</h2>
+  <p>30 Minuten, kein Pitch — ich höre zu, schaue mir deinen Shop an und sage dir ehrlich, ob ich helfen kann.</p>
+  <a href="#" class="cta-btn">Erstgespräch buchen →</a>
+</section>
+
+<footer>
+  <span>© 2026 · Unternehmensberater für E-Commerce · Mannheim</span>
+  <span>Impressum · Datenschutz</span>
+</footer>
+
+<!-- Feature 7 — Exit Intent Overlay -->
+<div class="exit-overlay" id="exitOverlay">
+  <div class="exit-modal">
+    <button class="exit-close" onclick="closeExit()">×</button>
+    <div class="exit-content">
+      <div class="exit-label">Bevor du gehst</div>
+      <h3>Hol dir den kostenlosen DTC Benchmark Report</h3>
+      <p>Alle Branchen-Benchmarks aus dem Checker als PDF — plus 3 Quick Wins die ich bei jedem Shop zuerst prüfe.</p>
+      <div class="exit-form">
+        <input type="email" id="exitEmail" placeholder="deine@email.de">
+        <button onclick="submitExit()">Kostenlos anfordern →</button>
+      </div>
+      <div class="exit-error" id="exitError"></div>
+      <div class="exit-success" id="exitSuccess">✓ Schau in dein Postfach — ich melde mich innerhalb von 24h.</div>
+      <div class="exit-skip" onclick="closeExit()">Nein danke, ich verzichte</div>
+    </div>
+  </div>
+</div>
+
+<script>
+// ─── Feature 4 — URL Parameter Prefill ───────────────────────────────────────
+const paramMap = { url:'shopUrl', ind:'industry', cr:'userCR', aov:'userAOV', atc:'userATC', ret:'userReturn', sessions:'userSessions' };
+(function loadParams(){
+  const p = new URLSearchParams(location.search);
+  Object.entries(paramMap).forEach(([param,id])=>{
+    const v=p.get(param); if(v){const el=document.getElementById(id);if(el)el.value=v;}
+  });
+})();
+
+// ─── Benchmarks ──────────────────────────────────────────────────────────────
+const benchmarks={
+  beauty:{cr:3.2,aov:48,atc:9.5,ret:28,name:'Beauty & Kosmetik'},
+  food:{cr:3.8,aov:38,atc:11.2,ret:35,name:'Food & Getränke'},
+  supplements:{cr:3.5,aov:52,atc:10.5,ret:32,name:'Supplements & Vitamine'},
+  fashion:{cr:2.2,aov:72,atc:7.8,ret:25,name:'Fashion & Bekleidung'},
+  accessories:{cr:2.0,aov:58,atc:7.5,ret:22,name:'Schmuck & Accessories'},
+  home:{cr:2.0,aov:95,atc:7.2,ret:20,name:'Home & Living'},
+  health:{cr:3.5,aov:42,atc:10.0,ret:30,name:'Health & Wellness'},
+  pets:{cr:3.0,aov:52,atc:9.0,ret:38,name:'Haustiere & Tierbedarf'},
+  sports:{cr:2.4,aov:68,atc:8.0,ret:24,name:'Sport & Outdoor'},
+  tech:{cr:1.8,aov:120,atc:6.5,ret:18,name:'Consumer Electronics'},
+  baby:{cr:2.8,aov:55,atc:9.2,ret:33,name:'Baby & Kids'},
+  sustainable:{cr:2.5,aov:45,atc:8.5,ret:26,name:'Nachhaltige Produkte'},
+  cleaning:{cr:3.6,aov:32,atc:11.0,ret:40,name:'Reinigung & Haushalt'},
+  cbd:{cr:2.2,aov:62,atc:7.0,ret:20,name:'CBD & Cannabis'},
+  garden:{cr:2.3,aov:58,atc:7.8,ret:22,name:'Garten & Pflanzen'}
+};
+
+const top10Multiplier={cr:1.6,aov:1.5,atc:1.55,ret:1.5};
+
+// ─── Feature 3 — Quick Wins Content Map ──────────────────────────────────────
+const quickWins={
+  cr:[
+    {icon:"🖼️",title:"Hero-Bild A/B-testen",text:"Lifestyle vs. Freisteller auf der PDP macht oft 0.3–0.8% CR-Unterschied. Einfachster erster Test.",link:"/blog/shopify-pdp-optimieren"},
+    {icon:"⚡",title:"Core Web Vitals prüfen",text:"Jede Sekunde Ladezeit kostet ~7% CR. Google PageSpeed Insights zeigt dir wo du stehst.",link:"/blog/shopify-pagespeed"},
+    {icon:"🔒",title:"Trust Signals über dem Fold",text:"Versandinfo, Rückgaberecht, Gütesiegel — direkt am ATC-Button sichtbar machen.",link:"/blog/shopify-trust-signals"}
+  ],
+  aov:[
+    {icon:"📦",title:"Free Shipping Threshold setzen",text:"Ein Schwellenwert bei ~120% deines aktuellen AOV erhöht den Warenkorb ohne Discount.",link:"/blog/aov-erhoehen-shopify"},
+    {icon:"🔗",title:"Frequently Bought Together",text:"Cross-Sell auf der PDP und im Warenkorb — oft +8–15% AOV bei korrekter Implementierung.",link:"/blog/aov-erhoehen-shopify"}
+  ],
+  atc:[
+    {icon:"📱",title:"Sticky ATC auf Mobile",text:"Ein fixierter Add-to-Cart Button auf Mobile erhöht die ATC-Rate typischerweise um 15–22%.",link:"/blog/add-to-cart-rate-erhoehen"},
+    {icon:"🎯",title:"ATC-Button Größe & Kontrast",text:"Dein ATC-Button muss der einzige prominente CTA auf der Seite sein. Kein Wettbewerb.",link:"/blog/add-to-cart-rate-erhoehen"}
+  ],
+  ret:[
+    {icon:"✉️",title:"Post-Purchase Email Flow",text:"Ein einfacher 3-E-Mail-Flow nach dem Kauf ist der günstigste Hebel für Wiederkäufer.",link:"/blog/returning-customers-erhoehen"},
+    {icon:"🎁",title:"Loyalty-Mechanismus testen",text:"Punkte, Treuerabatt oder ein exklusiver Zweikauf-Rabatt — teste welcher Mechanismus konvertiert.",link:"/blog/returning-customers-erhoehen"}
+  ]
+};
+
+// ─── Feature 5 — Inline Validation ───────────────────────────────────────────
+function clearValidation(){
+  ['shopUrl','industry','userCR','userAOV','userATC','userReturn','userSessions'].forEach(id=>{
+    const el=document.getElementById(id);
+    if(el){el.classList.remove('input-error','input-warn');}
+  });
+  document.querySelectorAll('.field-error,.field-warn').forEach(el=>{el.classList.remove('visible');el.textContent='';});
+}
+
+function validateFields(cr,aov,atc,ret,sessions,ind){
+  let valid=true;
+  if(!ind){document.getElementById('industry').classList.add('input-error');document.getElementById('err-industry').classList.add('visible');valid=false;}
+  if(isNaN(cr)||cr===''||cr<0){document.getElementById('userCR').classList.add('input-error');document.getElementById('err-cr').classList.add('visible');valid=false;}
+  if(isNaN(aov)||aov===''||aov<=0){document.getElementById('userAOV').classList.add('input-error');document.getElementById('err-aov').classList.add('visible');valid=false;}
+  if(isNaN(atc)||atc===''||atc<0){document.getElementById('userATC').classList.add('input-error');document.getElementById('err-atc').classList.add('visible');valid=false;}
+  if(isNaN(ret)||ret===''||ret<0){document.getElementById('userReturn').classList.add('input-error');document.getElementById('err-ret').classList.add('visible');valid=false;}
+  if(isNaN(sessions)||sessions===''||sessions<=0){document.getElementById('userSessions').classList.add('input-error');document.getElementById('err-sessions').classList.add('visible');valid=false;}
+  // Plausibility warnings (only if valid)
+  if(valid){
+    if(cr>15){document.getElementById('userCR').classList.add('input-warn');const w=document.getElementById('warn-cr');w.textContent='Bist du sicher? 15%+ CR ist ungewöhnlich hoch.';w.classList.add('visible');}
+    if(sessions<500){document.getElementById('userSessions').classList.add('input-warn');const w=document.getElementById('warn-sessions');w.textContent='Tipp: Benchmarks sind aussagekräftiger ab 1.000+ Sessions/Monat.';w.classList.add('visible');}
+    if(atc<cr){document.getElementById('userATC').classList.add('input-warn');const w=document.getElementById('warn-atc');w.textContent='Deine ATC-Rate ist niedriger als deine CR — das ist ungewöhnlich.';w.classList.add('visible');}
+  }
+  return valid;
+}
+
+// ─── Status Helper ────────────────────────────────────────────────────────────
+function getStatus(v,b){
+  const r=v/b;
+  if(r>=1.10)return{label:'Stark',cls:'badge-good',score:2,color:'var(--green)'};
+  if(r>=0.90)return{label:'OK',cls:'badge-ok',score:1,color:'var(--orange)'};
+  return{label:'Potenzial',cls:'badge-bad',score:0,color:'var(--red)'};
+}
+
+// ─── Main runCheck ────────────────────────────────────────────────────────────
+function runCheck(){
+  clearValidation();
+  const url=document.getElementById('shopUrl').value,
+    ind=document.getElementById('industry').value,
+    cr=parseFloat(document.getElementById('userCR').value),
+    aov=parseFloat(document.getElementById('userAOV').value),
+    atc=parseFloat(document.getElementById('userATC').value),
+    ret=parseFloat(document.getElementById('userReturn').value),
+    sessions=parseFloat(document.getElementById('userSessions').value);
+
+  if(!validateFields(cr,aov,atc,ret,sessions,ind))return;
+
+  // TODO: Plausible Analytics — uncomment and set domain
+  // window.plausible && plausible('checker_started', {props:{industry:ind}});
+
+  document.getElementById('checkerForm').style.display='none';
+  const o=document.getElementById('loadingOverlay');
+  o.classList.add('active');
+  const s=['ls1','ls2','ls3','ls4','ls5','ls6'];
+  let i=0;
+  const si=setInterval(()=>{
+    if(i>0){document.getElementById(s[i-1]).classList.remove('current');document.getElementById(s[i-1]).classList.add('done');}
+    if(i<s.length){document.getElementById(s[i]).classList.add('visible','current');i++;}
+    else clearInterval(si);
+  },400);
+  setTimeout(()=>{
+    o.classList.remove('active');
+    s.forEach(x=>{const e=document.getElementById(x);e.classList.remove('visible','current','done');});
+    showResults(url,ind,cr,aov,atc,ret,sessions);
+  },2800);
+}
+
+function showResults(url,ind,cr,aov,atc,ret,sessions){
+  const b=benchmarks[ind];
+  const crS=getStatus(cr,b.cr),aovS=getStatus(aov,b.aov),atcS=getStatus(atc,b.atc),retS=getStatus(ret,b.ret);
+  let domain='Dein Shop';
+  try{domain=new URL(url).hostname||'Dein Shop';}catch(e){}
+
+  const ts=crS.score+aovS.score+atcS.score+retS.score;
+  const score=Math.round((ts/8)*100);
+  const sc=score>=70?'var(--green)':score>=45?'var(--orange)':'var(--red)';
+
+  // Global state
+  window.lastIndustry=ind;
+  window.lastScore=score;
+  window.lastSessions=sessions;
+
+  // Score
+  document.getElementById('scoreArea').innerHTML=`<div class="result-score"><div class="score-val" style="color:${sc}">${score}/100</div><div class="score-label">Shop Effizienz Score</div></div>`;
+  document.getElementById('resultDomain').textContent=`${domain} · ${b.name} · ${sessions.toLocaleString('de-DE')} Sessions/Mo`;
+
+  // Feature 2 — KPI Bars
+  const kpiDefs=[
+    {key:'cr',label:'Conversion Rate',yours:cr,bench:b.cr,unit:'%',fmt:v=>v.toFixed(1)+'%',status:crS},
+    {key:'aov',label:'Ø Warenkorb (AOV)',yours:aov,bench:b.aov,unit:'€',fmt:v=>v.toFixed(0)+'€',status:aovS},
+    {key:'atc',label:'Add-to-Cart Rate',yours:atc,bench:b.atc,unit:'%',fmt:v=>v.toFixed(1)+'%',status:atcS},
+    {key:'ret',label:'Returning Customers',yours:ret,bench:b.ret,unit:'%',fmt:v=>v.toFixed(1)+'%',status:retS}
+  ];
+  const barsContainer=document.getElementById('kpiBars');
+  barsContainer.innerHTML='';
+  kpiDefs.forEach(kpi=>{
+    const top10=kpi.bench*top10Multiplier[kpi.key];
+    const yoursPct=Math.min((kpi.yours/top10)*100,100);
+    const benchPct=Math.min((kpi.bench/top10)*100,100);
+    const div=document.createElement('div');
+    div.className='kpi-bar-section';
+    div.innerHTML=`
+      <div class="kpi-bar-header">
+        <span class="kpi-bar-label">${kpi.label}</span>
+        <span class="kpi-bar-values"><strong>${kpi.fmt(kpi.yours)}</strong> · Benchmark ${kpi.fmt(kpi.bench)}</span>
+      </div>
+      <div class="kpi-bar-track">
+        <div class="kpi-bar-fill" style="width:0%;background:${kpi.status.color};" data-width="${yoursPct}"></div>
+        <div class="kpi-bench-line" style="left:${benchPct}%"></div>
+        <div class="kpi-bench-label" style="left:${benchPct}%">Ø ${kpi.fmt(kpi.bench)}</div>
+      </div>
+      <div class="kpi-badge-row"><span class="metric-badge ${kpi.status.cls}">${kpi.status.label}</span></div>
+    `;
+    barsContainer.appendChild(div);
+  });
+  // Animate bars
+  requestAnimationFrame(()=>{
+    requestAnimationFrame(()=>{
+      document.querySelectorAll('.kpi-bar-fill[data-width]').forEach(el=>{
+        el.style.width=el.dataset.width+'%';
+      });
+    });
+  });
+
+  // Potential Box
+  const pd=[];
+  let iCR=cr;
+  if(cr<b.cr){iCR=b.cr;pd.push({kpi:'Conversion Rate',lift:sessions*((b.cr-cr)/100)*aov,from:cr.toFixed(1)+'%',to:b.cr.toFixed(1)+'%'});}
+  let iAOV=aov;
+  if(aov<b.aov){iAOV=b.aov;pd.push({kpi:'Ø Warenkorb',lift:sessions*(iCR/100)*(b.aov-aov),from:aov.toFixed(0)+'€',to:b.aov.toFixed(0)+'€'});}
+  if(ret<b.ret){pd.push({kpi:'Returning Customers',lift:sessions*(iCR/100)*((b.ret-ret)/100)*iAOV*0.5,from:ret.toFixed(1)+'%',to:b.ret.toFixed(0)+'%'});}
+  const tp=pd.reduce((s,d)=>s+d.lift,0),ap=tp*12;
+  const pe=document.getElementById('potentialBox');
+  if(tp>0){
+    pe.innerHTML=`<div style="text-align:center;margin-bottom:16px;"><div style="font-size:11px;text-transform:uppercase;letter-spacing:1.5px;color:var(--text-muted);margin-bottom:8px;">Ungenutztes Umsatzpotenzial</div><div style="font-family:'JetBrains Mono',monospace;font-size:34px;font-weight:500;color:var(--red);">+${Math.round(tp).toLocaleString('de-DE')}€<span style="font-size:14px;color:var(--text-muted);font-weight:400;"> /Monat</span></div><div style="font-family:'JetBrains Mono',monospace;font-size:16px;color:var(--text-muted);margin-top:4px;">= ${Math.round(ap).toLocaleString('de-DE')}€ /Jahr</div></div><div style="margin-bottom:8px;">${pd.map(d=>`<div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--border);"><span style="font-size:13px;color:var(--text-dim);">${d.kpi} <span style="color:var(--text-muted);font-size:11px;">(${d.from} → ${d.to})</span></span><span style="font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--red);font-weight:500;">+${Math.round(d.lift).toLocaleString('de-DE')}€</span></div>`).join('')}</div><div style="font-size:11px;color:var(--text-muted);text-align:center;margin-top:12px;">Basierend auf Branchen-Benchmarks bei ${sessions.toLocaleString('de-DE')} Sessions/Monat</div>`;
+    pe.style.display='block';
+  } else {
+    pe.style.display='none';
+  }
+
+  // Feature 3 — Quick Wins
+  const badKPIs=kpiDefs.filter(k=>k.status.cls==='badge-bad').sort((a,b)=>a.status.score-b.status.score);
+  const qwBlock=document.getElementById('quickWinsBlock');
+  const qwCards=document.getElementById('quickWinsCards');
+  qwCards.innerHTML='';
+  if(badKPIs.length>0){
+    const shown=badKPIs.slice(0,2);
+    shown.forEach(kpi=>{
+      const wins=quickWins[kpi.key]||[];
+      const win=wins[0];
+      if(!win)return;
+      const card=document.createElement('div');
+      card.className='qw-card';
+      card.innerHTML=`<div class="qw-icon">${win.icon}</div><div class="qw-body"><div class="qw-title">${win.title}</div><div class="qw-text">${win.text}</div><a href="${win.link}" class="qw-link">Mehr dazu →</a></div>`;
+      qwCards.appendChild(card);
+    });
+    qwBlock.style.display='block';
+  } else {
+    qwBlock.style.display='none';
+  }
+
+  // Verdict
+  const bc=kpiDefs.filter(k=>k.status.cls==='badge-bad').length,oc=kpiDefs.filter(k=>k.status.cls==='badge-ok').length;
+  const fp=Math.round(tp).toLocaleString('de-DE'),fa=Math.round(ap).toLocaleString('de-DE');
+  const ve=document.getElementById('verdict');
+  if(bc>=2){
+    ve.className='result-verdict';
+    ve.innerHTML=`<div class="verdict-title">⚠️ ${bc} von 4 KPIs unter Branchenschnitt</div><div class="verdict-text">Dein Shop verschenkt aktuell <strong>~${fp}€ pro Monat</strong> — das sind <strong>${fa}€ im Jahr</strong>. Das wirkt sich direkt auf deine Marketing-Effizienz aus: Dein CAC steigt, dein ROAS sinkt, und Skalierung wird unmöglich.<br><br>Ein Audit zeigt dir welche Änderungen den meisten Impact haben.</div>`;
+    document.getElementById('resultCta').textContent='Kostenlosen Audit-Call buchen →';
+  } else if(bc>=1||oc>=2){
+    ve.className='result-verdict verdict-ok';
+    ve.innerHTML=`<div class="verdict-title">📊 Solide — aber ${tp>0?fp+'€/Monat bleiben liegen':'Luft nach oben'}</div><div class="verdict-text">„Okay" ist der teuerste Ort. Du zahlst vollen Preis für Traffic, holst aber nicht das Maximum raus.${tp>0?' <strong>'+fa+'€ pro Jahr</strong> — das ist ungenutztes Wachstum, das direkt auf deinen Profit durchschlägt.':''}<br><br>Lass uns identifizieren, wo die größten Hebel liegen.</div>`;
+    document.getElementById('resultCta').textContent='Potenziale aufdecken — Gespräch buchen →';
+  } else {
+    ve.className='result-verdict verdict-good';
+    ve.innerHTML=`<div class="verdict-title">✓ Starke Basis — jetzt geht es um die Kür</div><div class="verdict-text">Gute Zahlen, <strong>aber trügerisch:</strong> Die Top-Performer deiner Branche liegen bei CR <strong>${(b.cr*1.4).toFixed(1)}%+</strong> und AOV <strong>${Math.round(b.aov*1.3)}€+</strong>. Bei ${sessions.toLocaleString('de-DE')} Sessions wäre das <strong>~${Math.round(sessions*((b.cr*1.4-cr)/100)*aov).toLocaleString('de-DE')}€/Monat</strong> mehr.<br><br>Systematisches CRO und A/B-Testing bringen dich dahin.</div>`;
+    document.getElementById('resultCta').textContent='Nächstes Level besprechen →';
+  }
+
+  document.getElementById('results').classList.add('active');
+
+  // TODO: Plausible Analytics — uncomment and set domain
+  // window.plausible && plausible('checker_completed', {props:{industry:ind,score:score}});
+}
+
+function resetCheck(){
+  document.getElementById('checkerForm').style.display='block';
+  document.getElementById('results').classList.remove('active');
+  document.getElementById('potentialBox').style.display='none';
+  document.getElementById('captureSuccess').style.display='none';
+  document.getElementById('captureError').style.display='none';
+  clearValidation();
+}
+
+// ─── Feature 6 — Email Capture ────────────────────────────────────────────────
+function submitCapture(){
+  const email=document.getElementById('captureEmail').value.trim();
+  const errEl=document.getElementById('captureError');
+  const successEl=document.getElementById('captureSuccess');
+  errEl.style.display='none';
+  if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){
+    errEl.textContent='Bitte gib eine gültige E-Mail-Adresse ein.';
+    errEl.style.display='block';
+    return;
+  }
+  fetch('https://formspree.io/f/DEINE_FORMSPREE_ID',{
+    method:'POST',
+    headers:{'Content-Type':'application/json','Accept':'application/json'},
+    body:JSON.stringify({email,industry:window.lastIndustry||'',score:window.lastScore||0,source:'checker_post'})
+  }).then(r=>{
+    if(r.ok){
+      document.querySelector('.capture-row').style.display='none';
+      successEl.style.display='block';
+      // TODO: Plausible Analytics — uncomment and set domain
+      // window.plausible && plausible('email_submitted', {props:{source:'checker_post'}});
+    } else {
+      errEl.textContent='Fehler beim Senden. Bitte versuche es erneut.';
+      errEl.style.display='block';
+    }
+  }).catch(()=>{
+    errEl.textContent='Netzwerkfehler. Bitte versuche es erneut.';
+    errEl.style.display='block';
+  });
+}
+
+// ─── Feature 7 — Exit Intent ──────────────────────────────────────────────────
+function closeExit(){
+  document.getElementById('exitOverlay').classList.remove('active');
+  localStorage.setItem('exitShown','1');
+}
+function submitExit(){
+  const email=document.getElementById('exitEmail').value.trim();
+  const errEl=document.getElementById('exitError');
+  const successEl=document.getElementById('exitSuccess');
+  errEl.style.display='none';
+  if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){
+    errEl.textContent='Bitte gib eine gültige E-Mail-Adresse ein.';
+    errEl.style.display='block';
+    return;
+  }
+  fetch('https://formspree.io/f/DEINE_FORMSPREE_ID',{
+    method:'POST',
+    headers:{'Content-Type':'application/json','Accept':'application/json'},
+    body:JSON.stringify({email,industry:window.lastIndustry||'',score:window.lastScore||0,source:'exit_intent'})
+  }).then(r=>{
+    if(r.ok){
+      document.querySelector('.exit-form').style.display='none';
+      successEl.style.display='block';
+      setTimeout(closeExit,2500);
+    } else {
+      errEl.textContent='Fehler beim Senden. Bitte versuche es erneut.';
+      errEl.style.display='block';
+    }
+  }).catch(()=>{
+    errEl.textContent='Netzwerkfehler. Bitte versuche es erneut.';
+    errEl.style.display='block';
+  });
+}
+if(window.innerWidth>900){
+  document.addEventListener('mouseleave',function onLeave(e){
+    if(e.clientY<5&&!localStorage.getItem('exitShown')){
+      document.getElementById('exitOverlay').classList.add('active');
+    }
+  });
+}
+
+// ─── Feature 8 — FAQ Accordion ────────────────────────────────────────────────
+function toggleFaq(questionEl){
+  const item=questionEl.closest('.faq-item');
+  const isOpen=item.classList.contains('open');
+  document.querySelectorAll('.faq-item.open').forEach(i=>i.classList.remove('open'));
+  if(!isOpen)item.classList.add('open');
+}
+
+// ─── TODO: Plausible Analytics setup ─────────────────────────────────────────
+// 1. Register at plausible.io and add your domain
+// 2. Add: <script defer data-domain="DEINE_DOMAIN" src="https://plausible.io/js/script.js"></script>
+// 3. Uncomment plausible() calls in:
+//    - runCheck() → 'checker_started'
+//    - showResults() → 'checker_completed'
+//    - submitCapture() → 'email_submitted'
+//    - CTA clicks → 'cta_clicked' (add onclick to .result-cta and .cta-btn)
+</script>
+</body>
+</html>
